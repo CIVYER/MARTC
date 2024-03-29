@@ -1,0 +1,226 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+:root {
+--Royal: #334EAC;
+--Moon : #F7F2EB;
+--China : #7096D1;
+--AsianPear : #F2F0DE;
+--Midnight : #081F5C; /*button color*/
+--Dawn : #D0E3FF;
+--Jicama : #FFF9F0; /*bg color*/
+--Porcelain : #EDF1F6; /*fontcolor/hover*/
+--Sky : #BAD6EB;
+--LightBeige : #F1ECCC;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    background: var(--Jicama);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-semicircle {
+    position: absolute;
+    width: 600px; 
+    height: 500px;
+    background: linear-gradient(to right, #3974f2 50%, #3d5ff5 80%,  #081F5C 100%);
+    border-radius: 50%;
+    top: 75px;
+    left: -70px;
+    filter: blur(75px);
+}
+
+.middle-circle {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(to right, #3974f2 50%, #081F5C 100%);
+    border-radius: 50%;
+    position: absolute;
+    left: 750px;
+    bottom: -10px;
+    filter: blur(75px);
+}
+
+.right {
+    width: 150px;
+    height: 100%;
+    background: #3974f2;
+    position: absolute;
+    right: -50px;
+    filter: blur(75px);
+}
+
+.login-container {
+    width: 50%;
+    height: 70%;
+    background: linear-gradient(to top left, rgba(66, 193, 243, 0.3) 20%, rgba(31, 198, 240, 0.15) 30%);
+    position: absolute;
+    border: 1px solid rgb(255 255 255 / 50%);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px 0px 20px 5px rgba(0, 13, 17, 0.425);
+}
+
+.login-form {
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-deco-container {
+    width: 35%;
+    background: var(--Royal);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-items {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+span.login-label {
+    color: var(--Midnight);
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2.6em;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+span.signup-label {
+    color: var(--Midnight);
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2.6em;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+
+.text-input-container {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.form-label {
+    color: var(--Midnight);
+    font-weight: 300;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+input.text-style {
+    border-radius: 12px;
+    height: 30px;
+    background: none;
+    border: 2px solid rgba(5, 142, 255, 0.411);
+    padding-left: 10px;
+    color: var(--Midnight);
+}
+
+.login-btn {
+    width: 200px;
+    background: var(--Midnight);
+    border-radius: 20px;
+    border: none;
+    padding: 8px 0;
+    color: var(--Porcelain);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    box-shadow: 0 8px 10px 0 rgba(0,0,0,0.25);
+    margin-top: 50px;
+}
+.login-btn:hover{
+    background-color: var(--Moon);
+    color: #081F5C;
+}
+
+.login-deco {
+    position: relative;
+}
+
+i.small-cloud-icon  {
+    font-size: 2.5em;
+    position: absolute;
+    top: -50px;
+    left: -70px;
+    color: #ecfafa;
+}
+
+i.big-cloud-icon  {
+    font-size: 5em;
+    position: absolute;
+    top: -40px;
+    left: -45px;
+    color: #dff8f9;
+}
+
+i.lock-icon {
+    font-size: 5em;
+    color: #a6ecee;
+    position: absolute;
+}
+
+i.check-icon {
+    font-size: 1.5em;
+    color: white;
+    position: absolute;
+    top: 44px;
+    left: 22px;
+}
+
+.lock {
+    position: relative;
+    left: -35px;
+    top: -20px;
+}
+
+span.footer {
+   position: absolute;
+   bottom: 15px;
+   color: var(--Porcelain);
+   font-weight: 500;
+  font-style: normal;
+   font-size: 14px; 
+}
+
+input:focus {
+    outline: none;
+}

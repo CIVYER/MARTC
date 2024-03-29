@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Source Sans Pro;
+}
+
+:root{
+    --Royal: #334EAC;
+    --Moon : #F7F2EB;
+    --China : #7096D1;
+    --AsianPear : #F2F0DE;
+    --Midnight : #081F5C; /*button color*/
+    --Dawn : #D0E3FF;
+    --Jicama : #FFF9F0; /*bg color*/
+    --Porcelain : #EDF1F6; /*fontcolor/hover*/
+    --Sky : #BAD6EB;
+    --LightBeige : #F1ECCC;
+}
+
+html{
+    height: 100%;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--Jicama);
+    min-width: 100%;
+    padding: 0 0.625rem;
+    min-height: 100%;
+}
+
+.container-box{
+    width: 25rem;
+    min-height: 15rem;
+    background: linear-gradient(to top left, rgba(66, 193, 243, 0.3) 20%, rgba(31, 198, 240, 0.15) 30%);
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px var(--Jicama);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: hidden;
+    row-gap: 1.25rem;
+}
+
+
+h1, h2, p, button{
+    text-align: center;
+    padding: 0.2rem;
+}
+
+h1{
+    color: var(--Midnight);
+    font-size: 1.5rem;
+    
+}
+
+p, label{
+    font-family: 'Source Sans Pro';
+    font-size: 0.8rem;
+    color: var(--China);
+}
+
+
+form input{
+    height: 2.813rem;
+    width: 2.625rem;
+}
+
+:where(.container-box, form, .input-text-otp){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.input-text-otp{
+    padding-bottom: 1rem;
+}
+
+form .input-text-otp{
+    flex-direction: row;
+    column-gap: 0.625rem;
+}
+
+.input-text-otp input{
+    border-radius: 0.375rem;
+    text-align: center;
+    font-size: 1.125rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"]{
+    -moz-appearance: textfield;
+}
+
+form button{
+    width: 6rem;
+    height: 2rem;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    background-color: var(--China);
+    color: var(--Porcelain);
+    border-radius: 12px;
+    pointer-events:none;
+}
+
+.container-space{
+    margin: 1rem;
+}
+
+.image-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: green;
+    width: 3rem;
+    height: 3rem;
+}
+
+.image-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover{
+    color: var(--Midnight);
+    background-color: var(--Porcelain);
+}
+
+button:active{
+    background-color: var(--Midnight);
+    pointer-events: auto;
+}
+.active{
+    background-color: var(--Midnight);
+}
+a{
+    color: var(--China);
+    text-decoration: none;
+    font-size: 0.rem;
+}
+
+a:hover{
+    color: var(--China);
+}
+
+a:visited{
+    color:var(--Midnight);
+    text-decoration: underline;
+}
+
+

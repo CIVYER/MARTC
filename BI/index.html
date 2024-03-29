@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/chart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="./index.html">
+                      <!--  <span class="icon"><ion-icon name="logo-apple"></ion-icon></span> -->
+                        <span class="title">Mart-C Fei</span>
+                    </a>
+                </li>
+                <li id="Dashboard" class="hovered currPage">
+                    <a href="./index.html">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li id="Employees" >
+                    <a href="../HR/index.html">
+                        <span class="icon"><ion-icon name="people-circle-outline"></ion-icon></span>
+                        <span class="title">Employees</span>
+                    </a>
+                </li>
+                <li id="Customers" >
+                    <a href="../CRM/index.html">
+                        <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+                <li id="Finance" >
+                    <a href="../Finance/index.html">
+                        <span class="icon"><ion-icon name="business-outline"></ion-icon></span>
+                        <span class="title">Finance</span>
+                    </a>
+                </li>
+                <li id="Inventory" onmouseover="myFunction(this)" onmouseout="myFunctionoutMain(this)">
+                    <a href="../Inventory/index.html">
+                        <span class="icon"><ion-icon name="cube-outline"></ion-icon></span>
+                        <span class="title">Inventory</span> <button class="dropdown-btn">
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-container" id="Inventory-Dropdown"  onmouseout="myFunctionout(this)">
+                            <a href="../Warehouse/index.html">Warehouse</a>
+                            <a href="#">Dep 2</a>
+                            <a href="#">Dep 3</a>
+                        </div>
+                           
+                                            
+                </li>
+                </a>
+                    </a>
+                </li>
+              
+                <li id="Settings" >
+                    <a href="../UserProfile/index.html">
+                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+                <li id="Sign" >
+                    <a href="#">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="title">Sign Out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                <div class="user" onclick="location.href = '../Userprofile/index.html'">
+                    <img src="../assets/imgs/customer01.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <img class="people" src="../assets/imgs/people2.png" alt="pic">
+                        <div class="numbers">107</div>
+                        <div class="cardName">Employees</div>
+                    </div>
+                   
+                </div>
+                <div class="card">
+                    <div>
+                        <img class="sale" src="../assets/imgs/sales.png" alt="pic">
+                        <div class="numbers">80</div>
+                        <div class="cardName">Sales</div>
+                    </div>
+                  
+                </div>
+                <div class="card">
+                    <div>
+                        <img class="ship" src="../assets/imgs/shipment.png" alt="pic">
+                        <div class="numbers">284</div>
+                        <div class="cardName">Shipments</div>
+                    </div>
+                    
+                </div>
+                <div class="card">
+                    <div>
+                        <img class="rev" src="../assets/imgs/revenue.png" alt="pic">
+                        <div class="numbers">$7,842</div>
+                        <div class="cardName">Revenue</div>
+                    </div>
+                   
+                </div>
+            </div>
+
+            
+
+            <!-- Chart container -->
+            <div class="chart-container" id="piechart"></div>
+        </div>
+    </div>
+    <!-- <script src="../assets/js/dropbtn1.js"></script> -->
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dropbtn.js"></script>
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <!-- ====== Google Charts ======= -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Products', 'Revenue percentage'],
+                ['Food products',     11],
+                ['Cleaning products',      2],
+                ['Beauty products',  2],
+                ['Kitchen utility products', 2],
+                ['Others',    7]
+            ]);
+
+            var options = {
+                title: 'Sales report'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+    </script>
+</body>
+</html>

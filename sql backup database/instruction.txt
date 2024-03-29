@@ -1,0 +1,1 @@
+Idrop niya all data kapag inimport niyo toh then create clean database.

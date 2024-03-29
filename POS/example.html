@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example connect</title>
+    <style> 
+        .scannedList{
+            width: 300px; 
+            height: 200px;
+            overflow: scroll;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+        } 
+    </style>
+</head>
+<body>
+    <img id="ipAddress" src="./connectScanner/ipAddress.png" alt="">
+    <div class="scannedList">
+    </div>
+    <button id="clear">clear list</button>
+
+    <form action="" target="_parent">
+        <input type="submit" value="sadfsdaff">
+    </form>
+</body>
+<script src="./js/generateIpAddressQr.js"></script>
+<script src="./js/handleSSEevents.js"></script>
+<script>
+    window.onload = ()=>{
+        fetch(`./fromPhone.php?clear=clear`).then(response => response.text).then((data)=>{});
+    
+    }
+</script>
+</html>
